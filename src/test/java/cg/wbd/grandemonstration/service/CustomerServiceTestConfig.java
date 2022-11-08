@@ -1,8 +1,7 @@
-package cg.wbd.grandemonstration.controller;
+package cg.wbd.grandemonstration.service;
 
 
 import cg.wbd.grandemonstration.repository.CustomerRepository;
-import cg.wbd.grandemonstration.service.CustomerService;
 import cg.wbd.grandemonstration.service.impl.CustomerServiceImplWithSpringData;
 import org.mockito.Mockito;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +13,7 @@ public class CustomerServiceTestConfig {
     public CustomerService customerService() {
         return new CustomerServiceImplWithSpringData();
     }
+    //Tạo và đưa vào các khởi tạo giả
     @Bean
     public CustomerRepository customerRepository() {
         return Mockito.mock(CustomerRepository.class);

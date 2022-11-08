@@ -37,18 +37,18 @@ dependencies {
 
     compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
-
+//Bổ sung các thư viện cần thiết để sử dụng JUnit, những thư viện này sẽ chỉ được compile khi chạy kiểm thử trong dependency file build.gradle
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.0'
     implementation group: 'org.junit.platform', name: 'junit-platform-commons', version: '1.9.0'
     testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.8.2'
-
+//Bổ sung thư viện spring-tests để có khả năng tích hợp spring mvc với thư viện kiểm thử
     testImplementation group: 'org.springframework', name: 'spring-test', version: '5.3.20'
     testImplementation group: 'com.github.sbrannen', name: 'spring-test-junit5', version: '1.4.0'
-
+//Bổ sung thư viện mokito để có khả năng giả lập hành vi
     testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     testImplementation group: 'com.h2database', name: 'h2', version: '2.1.210'
 }
-
+//Bổ sung script để gradle chạy test bằng junit platform vào build.gradle:
 test {
     useJUnitPlatform()
 

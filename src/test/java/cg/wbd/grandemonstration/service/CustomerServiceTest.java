@@ -1,8 +1,7 @@
-package cg.wbd.grandemonstration.controller;
+package cg.wbd.grandemonstration.service;
 
 import cg.wbd.grandemonstration.model.Customer;
 import cg.wbd.grandemonstration.repository.CustomerRepository;
-import cg.wbd.grandemonstration.service.CustomerService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -26,12 +25,12 @@ import static org.mockito.Mockito.when;
 public class CustomerServiceTest {
     @Autowired
     private CustomerService customerService;
-
+    //Do service sẽ triệu gọi repository nên sẽ cần mock repository.
     @Autowired
     private CustomerRepository customerRepository;
 
     @AfterEach
-    private void resetMocks() {
+    public void resetMocks() {
         Mockito.reset(customerRepository);
     }
     @Test
